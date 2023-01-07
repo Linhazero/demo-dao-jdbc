@@ -1,6 +1,5 @@
 package application;
 
-import java.sql.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -35,6 +34,12 @@ public class program {
 		Seller newSeller = new Seller(null, "Greg", "Greg@gmail.com", new java.util.Date(), 4000.00, department );
 		sellerDao.insert(newSeller);
 		System.out.println("Insertd! new id = " + newSeller.getId());
+		
+		System.out.println("\n=== test 5: seller update ===");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completd");
 
 	}
 
